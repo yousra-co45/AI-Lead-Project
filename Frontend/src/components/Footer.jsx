@@ -31,7 +31,7 @@ const Footer = () => {
           </svg>
         )
       },
-      // WA added with official logo
+  
       { 
         name: 'WhatsApp', 
         icon: (

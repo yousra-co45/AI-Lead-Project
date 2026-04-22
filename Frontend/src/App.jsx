@@ -12,12 +12,10 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-slate-900 text-white font-poppins flex flex-col">
-        
-        {/* Navbar hamesha top par rahega */}
         <Navbar />
 
         {/* Main content area jahan pages change honge */}
-        <main className="flex-grow pt-20">
+        <main className="flex-grow pt-20"> 
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
@@ -28,8 +26,6 @@ function App() {
             <Route path="/testimonials" element={<Testimonials />} />
           </Routes>
         </main>
-
-        {/* Footer hamesha bottom par rahega */}
         <Footer />
       </div>
     </Router>
