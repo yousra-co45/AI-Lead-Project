@@ -7,6 +7,7 @@ import Services from './pages/Services';
 import WhyUs from './pages/WhyUs';
 import Portfolio from './pages/Portfolio';
 import Testimonials from './pages/Testimonials';
+import LeadForm from "./components/LeadForm";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/why-us" element={<WhyUs />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/testimonials" element={<Testimonials />} />
+            <Route path="/contact" element={<LeadForm />} />
           </Routes>
         </main>
 

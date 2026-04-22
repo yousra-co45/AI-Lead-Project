@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // 1. Link ko import karna zaroori hai
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full z-[100] bg-slate-900/90 backdrop-blur-md py-4 border-b border-white/5 font-poppins">
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        
+
         {/* Logo - Use Link instead of <a> */}
         <Link to="/" className="flex items-center gap-2 no-underline group">
           <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded flex items-center justify-center group-hover:rotate-12 transition-transform">
@@ -42,7 +42,8 @@ const Navbar = () => {
           {/* Green Accent CTA */}
           <Link
             to="/contact"
-            className="px-5 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold rounded-full text-xs no-underline shadow-lg transition-all"
+            onClick={() => setIsOpen(false)} // Click par menu band ho jaye
+            className="block text-center px-5 py-3 bg-emerald-500 text-slate-900 font-bold rounded-xl no-underline"
           >
             BOOK CALL
           </Link>
@@ -55,7 +56,7 @@ const Navbar = () => {
           </svg>
         </button>
       </div>
-      
+
       {/* Mobile Menu logic same rahegi, bas wahan bhi Link use hoga */}
     </nav>
   );
