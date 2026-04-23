@@ -7,6 +7,7 @@ import Services from './pages/Services';
 import Portfolio from './pages/Portfolio';
 import Testimonials from './pages/Testimonials';
 import WhyUs from './components/whychooseus'; 
+import LeadForm from './components/LeadForm';
 
 function App() {
   return (
