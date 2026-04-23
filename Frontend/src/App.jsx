@@ -4,10 +4,9 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Services from './pages/Services';
-import WhyUs from './pages/WhyUs';
 import Portfolio from './pages/Portfolio';
 import Testimonials from './pages/Testimonials';
-import LeadForm from "./components/LeadForm";
+import WhyUs from './components/whychooseus'; 
 
 function App() {
   return (
@@ -18,11 +17,13 @@ function App() {
         <Navbar />
 
         {/* Main content area jahan pages change honge */}
-        <main className="flex-grow pt-20"> 
+        <main className="flex-grow pt-20">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
+            
             <Route path="/why-us" element={<WhyUs />} />
+
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/contact" element={<LeadForm />} />
@@ -31,7 +32,6 @@ function App() {
 
         {/* Footer hamesha bottom par rahega */}
         <Footer />
-
       </div>
     </Router>
   );

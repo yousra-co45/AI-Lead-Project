@@ -8,6 +8,10 @@ module.exports = {
         trafficYellow: '#FFCC00',
         trafficGreen: '#34C759',
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+      },
     },
   },
   plugins: [],
