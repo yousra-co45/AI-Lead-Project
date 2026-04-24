@@ -8,6 +8,7 @@ import Portfolio from './pages/Portfolio';
 import Testimonials from './pages/Testimonials';
 import WhyUs from './components/whychooseus'; 
 import LeadForm from './components/LeadForm';
+import WhatsAppButton from './components/WhatsApp';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
             <Route path="/contact" element={<LeadForm />} />
           </Routes>
         </main>
-
+        <WhatsAppButton />
         {/* Footer hamesha bottom par rahega */}
         <Footer />
       </div>
