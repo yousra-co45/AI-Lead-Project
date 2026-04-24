@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 // 1. Link ko import karna zaroori hai
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
@@ -15,9 +15,8 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full z-[100] bg-slate-900/90 backdrop-blur-md py-4 border-b border-white/5 font-poppins">
+    <nav className="fixed top-0 w-full z-50 bg-slate-900/90 backdrop-blur-md py-4 border-b border-white/10 font-poppins">
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-        
         {/* Logo - Use Link instead of <a> */}
         <Link to="/" className="flex items-center gap-2 no-underline group">
           <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded flex items-center justify-center group-hover:rotate-12 transition-transform">
@@ -49,14 +48,48 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Hamburger Toggle (Same as before) */}
-        <button className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+        <button className="block md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"} />
           </svg>
         </button>
       </div>
-      
+
       {/* Mobile Menu logic same rahegi, bas wahan bhi Link use hoga */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -12 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
+            className="md:hidden border-t border-white/5 bg-slate-900/95"
+          >
+            <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className="text-sm font-medium text-slate-300 hover:text-white transition-all no-underline"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
+
+              <Link
+                to="/contact"
+                className="mt-2 inline-flex w-fit px-5 py-2 bg-emerald-500 hover:bg-emerald-400 text-slate-900 font-bold rounded-full text-xs no-underline shadow-lg transition-all"
+                onClick={() => setIsOpen(false)}
+              >
+                BOOK CALL
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+
     </nav>
   );
 };
